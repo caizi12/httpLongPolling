@@ -12,6 +12,9 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * 长轮询方式获取数据
+ */
 public class PollingServlet extends HttpServlet {
     private static final long serialVersionUID = 4793060102193587649L;
     public static DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -40,7 +43,7 @@ public class PollingServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String actionType = req.getParameter("actionType");
-        System.out.print("actionType:" + actionType);
+        System.out.println("actionType:" + actionType);
         //poll主题
         if ("poll".equalsIgnoreCase(actionType)) {
             String topic = req.getParameter("topic");
@@ -53,6 +56,7 @@ public class PollingServlet extends HttpServlet {
             changeTopic(topic, msg);
             resp.getWriter().print("ok");
         }
+        System.out.println("get over");
     }
 
     /**
