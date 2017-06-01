@@ -1,9 +1,6 @@
 package test.com.lf.http;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * Created by lfeng on 17/6/1.
@@ -15,11 +12,10 @@ public class ClientWorker {
     private void test(){
 
         //定时任务，每个1ms从服务器拉去变化的数据
-        ScheduledExecutorService executor = Executors.newScheduledThreadPool(1, new ThreadFactory() {
-            @Override
+        ScheduledExecutorService executor = new ScheduledThreadPoolExecutor(1, new ThreadFactory() {
             public Thread newThread(Runnable r) {
                 Thread t = new Thread(r);
-                t.setName("com.taobao.diamond.client.Worker."+ env.serverMgr.name);
+//                t.setName("com.taobao.diamond.client.Worker."+ env.serverMgr.name);
                 t.setDaemon(true);
                 return t;
             }
@@ -32,7 +28,7 @@ public class ClientWorker {
 ////获取服务器的变化的配置信息
 //                    checkServerConfigInfo();
                 } catch (Throwable e) {
-                    log.error(env.getName(), "DIAMOND-XXXX", "[sub-check] rotate check error", e);
+//                    log.error(env.getName(), "DIAMOND-XXXX", "[sub-check] rotate check error", e);
                 }
             }
         }, 1L, 1L, TimeUnit.MILLISECONDS);

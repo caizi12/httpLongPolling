@@ -29,9 +29,11 @@ public class PollingServlet extends HttpServlet {
                 long current = System.currentTimeMillis();
                 for (Map.Entry<String, PollingClient> entry : client.entrySet()) {
                     PollingClient pollingClient = entry.getValue();
-                    if (pollingClient == null)
+                    if (pollingClient == null){
                         return;
-                    if (current - pollingClient.vistTime > 20 * 1000) {
+                    }
+
+                    if (current - pollingClient.vistTime > 80 * 1000) {
                         pollingClient.complete();
                         client.remove(entry.getKey());
                     }
