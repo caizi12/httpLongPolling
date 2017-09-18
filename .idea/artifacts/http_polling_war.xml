@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="http-polling:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="http-polling.war">
-      <element id="artifact" artifact-name="http-polling:war exploded" />
-    </root>
-  </artifact>
-</component>
