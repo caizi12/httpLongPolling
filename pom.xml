@@ -5,27 +5,27 @@
   <artifactId>java-test</artifactId>
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
+
   <modules>
     <module>annotation-test</module>
     <module>http-polling</module>
     <module>java-web</module>
   </modules>
-  <name>http-polling Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>3.1.0</version>
     </dependency>
   </dependencies>
+
   <build>
     <finalName>lf-java-test</finalName>
   </build>

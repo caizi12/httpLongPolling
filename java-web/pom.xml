@@ -11,6 +11,6 @@
 
     <groupId>com.lf.http</groupId>
     <artifactId>http-polling</artifactId>
-
+    <version>1.0.0</version>
 
 </project>
