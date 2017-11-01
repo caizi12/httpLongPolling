@@ -9,6 +9,7 @@
   <modules>
     <module>annotation-test</module>
     <module>http-polling</module>
+    <module>algorithm</module>
     <module>java-web</module>
   </modules>
 
