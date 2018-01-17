@@ -270,5 +270,10 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.4" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.9" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat:catalina:6.0.53" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat:coyote:6.0.53" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat:servlet-api:6.0.53" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat:juli:6.0.53" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat:annotations-api:6.0.53" level="project" />
   </component>
 </module>

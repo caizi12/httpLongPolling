@@ -30,6 +30,11 @@
       <artifactId>tripspider-sdk</artifactId>
       <version>1.0.0-SNAPSHOT</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>catalina</artifactId>
+      <version>6.0.53</version>
+    </dependency>
   </dependencies>
 
   <build>
