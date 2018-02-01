@@ -30,10 +30,11 @@ public class Parse7FreshItemJsonData {
                 obj.put("storeId", map.get("storeId")[0]);
                 obj.put("skuId", map.get("skuId")[0]);
 
+
                 obj.put("cate_name_level1", tmp[0]);
                 obj.put("cate_name_level2", tmp[1]);
                 obj.put("cate_name_level3", tmp[2]);
-                obj.put("item_url", item_url);
+//                obj.put("item_url", item_url);
                 System.out.println(obj.toString().replaceAll("[\\{\\}]",""));
             }
         }
