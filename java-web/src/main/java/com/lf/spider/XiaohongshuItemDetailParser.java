@@ -13,6 +13,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -27,23 +29,12 @@ public class XiaohongshuItemDetailParser extends TrspCrawlerExtractorAdapter {
         if (html == null) {
             return null;
         }
-        JSONArray itemDataArray = new JSONArray();
-
-        String cate_level1_name = jsonObject.getString("cate_level1_name");
-        String cate_level1_id = jsonObject.getString("cate_level1_id");
-
-        JSONArray itemJsonArray = getCategoryItemList(html);
-        JSONArray itemTmpList = null;
-        JSONObject category = null;
-        for (Object object : itemJsonArray) {
-            itemTmpList = ((JSONObject) object).getJSONArray("itemList");
-            category = ((JSONObject) object).getJSONObject("category");
-            category.put("cate_level1_id", cate_level1_id);
-            category.put("cate_level1_name", cate_level1_name);
-            itemDataArray.addAll(parseItemList(itemTmpList, category));
-        }
-
-        return itemDataArray;
+        JSONArray itemDataArray = getItemList(html);
+        setItemInfo(itemDataArray, jsonObject);
+        jsonObject.put("list",jsonObject);
+        JSONArray resultDataArray = new JSONArray();
+        resultDataArray.add(jsonObject);
+        return resultDataArray;
     }
 
 
@@ -53,51 +44,73 @@ public class XiaohongshuItemDetailParser extends TrspCrawlerExtractorAdapter {
      * @param html
      * @return
      */
-    private JSONArray getCategoryItemList(String html) {
+    private JSONArray getItemList(String html) {
         Document document = Jsoup.parse(html);
         Elements elements = document.getElementsByTag("script");
         String tmpHtml = null;
         String dataJson = null;
+        String identify = "__INITIAL_SSR_STATE__=";
         for (Element element : elements) {
             tmpHtml = element.html();
-            if (tmpHtml != null && element.html().indexOf("json_Data") > -1) {
-                dataJson = tmpHtml.substring(tmpHtml.indexOf("json_Data") + 10, tmpHtml.lastIndexOf("}")+1 );
+            if (tmpHtml != null && element.html().indexOf(identify) > -1) {
+                dataJson = tmpHtml.substring(tmpHtml.indexOf(identify) + identify.length(), tmpHtml.lastIndexOf("}") + 1);
                 break;
             }
         }
-        JSONArray categoryItemList = JSONObject.parseObject(dataJson).getJSONArray("categoryItemList");
-        return categoryItemList;
-    }
-
-    private void setCategoryInfo(JSONObject category, JSONObject dataObj) {
-        if (category != null && dataObj != null) {
-            dataObj.put("cate_level2_name", category.getString("name"));
-            dataObj.put("cate_level2_id", category.getString("id"));
-            dataObj.put("cate_level1_id", category.getString("cate_level1_id"));
-            dataObj.put("cate_level1_name", category.getString("cate_level1_name"));
-        }
-    }
-
-    private JSONArray parseItemList(JSONArray itemJsonList, JSONObject category) {
-        JSONArray itemList = new JSONArray();
-        JSONObject itemObj = null;
-        JSONObject objTmp = null;
-        for (Object object : itemJsonList) {
-            objTmp = (JSONObject) object;
-            itemObj = new JSONObject();
-            itemObj.put("id", objTmp.get("id"));
-            itemObj.put("title", objTmp.get("name"));
-            itemObj.put("promotion_price", objTmp.get("counterPrice"));
-            itemObj.put("orig_price", objTmp.get("retailPrice"));
-            setCategoryInfo(category, itemObj);
-            itemList.add(itemObj);
-        }
+        JSONArray itemList = JSONObject.parseObject(dataJson).getJSONObject("Main").
+                getJSONObject("basicData").getJSONArray("items");
         return itemList;
     }
 
 
+    private void setItemInfo(JSONArray itemJsonList, JSONObject itemObject) {
+        JSONObject itemJson = null;
+        for (Object object : itemJsonList) {
+            itemJson = (JSONObject) object;
+            if (itemObject.get("id").equals(itemJson.getString("id"))) {
+
+                itemObject.put("title", itemJson.getString("name"));
+                itemObject.put("gmt_create", getCurrentTime());
+                itemObject.put("promotion_activity", itemJson.getString("couponText"));
+
+                JSONObject brandObj = itemJson.getJSONObject("brand");
+                if (brandObj != null) {
+                    itemObject.put("brand", brandObj.getString("name"));
+                }
+
+                JSONObject shareInfoObj = itemJson.getJSONObject("shareInfo");
+                if (shareInfoObj != null) {
+                    itemObject.put("url", shareInfoObj.getString("url"));
+                }
+
+                JSONObject detailJson = itemJson.getJSONObject("detail");
+
+                if (detailJson != null && detailJson.getJSONArray("attributes") != null) {
+                    StringBuilder keyPropery = new StringBuilder();
+                    JSONArray attrArray = detailJson.getJSONArray("attributes");
+                    JSONObject attrJsonObj = null;
+                    for (Object attrObj : attrArray) {
+                        attrJsonObj = (JSONObject) attrObj;
+                        keyPropery.append(attrJsonObj.getString("attributeName"));
+                        keyPropery.append(":");
+                        keyPropery.append(attrJsonObj.getString("text"));
+                        keyPropery.append(";");
+                    }
+                    itemObject.put("key_property", keyPropery.toString());
+                }
+
+                break;
+            }
+        }
+    }
+
+    private String getCurrentTime(){
+        SimpleDateFormat format=new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+        return format.format(new Date());
+    }
+
     private String readHtml() throws Exception {
-        String path = "/Users/lfeng/workspace/httpLongPolling/java-web/src/main/java/com/lf/spider/neteasyCateitem.htm";
+        String path = "/Users/lfeng/workspace/httpLongPolling/java-web/src/main/java/com/lf/spider/xiaohongshuItemDetail.htm";
         File itemHtmlFile = new File(path);
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(itemHtmlFile), "utf-8"));
         StringBuilder sb = new StringBuilder(10000);
@@ -111,19 +124,11 @@ public class XiaohongshuItemDetailParser extends TrspCrawlerExtractorAdapter {
 
     public static void main(String[] args) throws Exception {
         XiaohongshuItemDetailParser parser = new XiaohongshuItemDetailParser();
-
-        JSONArray itemDataArray = new JSONArray();
-
-        JSONArray itemJsonArray = parser.getCategoryItemList(parser.readHtml());
-        JSONArray itemTmpList = null;
-        JSONObject category = null;
-        for (Object object : itemJsonArray) {
-            itemTmpList = ((JSONObject) object).getJSONArray("itemList");
-            category = ((JSONObject) object).getJSONObject("category");
-            itemDataArray.addAll(parser.parseItemList(itemTmpList, category));
-        }
-
-        System.out.println(itemDataArray);
+        JSONArray itemJsonArray = parser.getItemList(parser.readHtml());
+        JSONObject itemJson = new JSONObject();
+        itemJson.put("id", "59c91ae846283926e6ef843e");
+        parser.setItemInfo(itemJsonArray, itemJson);
+        System.out.println(itemJson);
     }
 
 
