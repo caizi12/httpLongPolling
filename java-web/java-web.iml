@@ -15,7 +15,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.12" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.trip.tripspider:tripspider-sdk:1.0.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.trip.tripspider:tripspider-spider:1.0.1-SNAPSHOT" level="project" />
@@ -136,25 +136,29 @@
     <orderEntry type="library" name="Maven: xerces:xercesImpl:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.trip.tripspider:tripspider-monitor-client:1.0.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.trip.tripspider:tripspider-spider-client:1.0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-client:5.1.23-2" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-matrix:5.1.23-2" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-common:5.1.23-2" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-optimizer:5.1.23-2" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-rule:5.1.23-2" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-parser:5.1.23-2" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-executor:5.1.23-2" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-client:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-matrix:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-common:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: org.jdom:jdom:2.0.2" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-optimizer:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-rule:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-parser:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-executor:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-net:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-web:2.5.6.SEC03" level="project" />
     <orderEntry type="library" name="Maven: com.sleepycat:je:5.0.73" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.h2database:h2:1.0.0.ali" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-core:3.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.fusesource:sigar:1.6.4" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.h2database:h2:1.0.0.ali.fix1" level="project" />
     <orderEntry type="library" name="Maven: org.osgi:org.osgi.core:4.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.osgi:org.osgi.enterprise:4.2.0" level="project" />
     <orderEntry type="library" name="Maven: com.vividsolutions:jts:1.13" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-config:5.1.23-2" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-monitor:5.1.23-2" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-repo-mysql:5.1.23-2" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-group:5.1.23-2" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-atom:5.1.23-2" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba:druid:1.0.20" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-transaction:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-config:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-monitor:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-repo-mysql:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-group:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-atom:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:druid:1.0.25.2018030201" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: com.alibaba:jconsole:1.8.0">
         <CLASSES>
@@ -173,14 +177,16 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.35" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-repo-bdb:5.1.23-2" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-repo-demo:5.1.23-2" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-sequence:5.1.23-2" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-config-diamond:5.1.23-2" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba.unit.rule:unitrouter:1.0.14" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba.unit:unitrouter-ext:1.0.2" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.common:fulllinkstresstesting:0.9.9.1" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-memcached:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tmemcached:2.2.6" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.40" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-repo-bdb:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-repo-demo:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-sequence:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.tddl:tddl-config-diamond:5.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.unit.rule:unitrouter:1.1.5-fix-1" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.unit:unitrouter-ext:1.0.3" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.common:fulllinkstresstesting:0.9.9.3" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.external:sourceforge.ibatis:2.3.4.726-patch2.0" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.toolkit.common.lang:lang:1.0" level="project" />
     <orderEntry type="library" name="Maven: javax.mail:mail:1.4.5" level="project" />
@@ -193,11 +199,15 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:3.2.17.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:3.2.17.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-orm:3.2.17.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.metaq.final:metaq-client:3.2.6" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba.rocketmq:rocketmq-client:3.2.6" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba.rocketmq:rocketmq-common:3.2.6" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba.rocketmq:rocketmq-remoting:3.2.6" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.mqtrace:mqtrace-client:1.0.2-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.metaq.final:metaq-client:4.1.6.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.aliyun.openservices:ons-auth4client:1.2.9" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.metaq.final:metaq-trace-core:4.1.6.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.metaq.final:metaq-grayenv:4.1.6.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.rocketmq:rocketmq-client:4.2.2" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.rocketmq:rocketmq-common:4.2.2" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.rocketmq:rocketmq-remoting:4.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-tcnative:linux-x86_64:1.1.33.Fork22" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.rocketmq:rocketmq-logging:4.2.2" level="project" />
     <orderEntry type="library" name="Maven: com.taobao.notify:notify-tr-client:3.2.0" level="project" />
     <orderEntry type="library" name="Maven: com.taobao.notify:notify-utils:3.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.mina:mina-core:1.1.5.bugfix-release" level="project" />
@@ -246,6 +256,7 @@
     <orderEntry type="library" name="Maven: javax.validation:validation-api:1.1.0.Final" level="project" />
     <orderEntry type="library" name="Maven: net.sourceforge.javacsv:javacsv:2.0" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun.odps:odps-sdk-group-api:0.22.3" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.vipserver:vipserver-client:4.6.2" level="project" />
     <orderEntry type="library" name="Maven: com.taobao.at:atic-client:4.3.9-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.taobao.at:at-domain:3.1.1-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.taobao.at:at-common-domain:6.6.15-SNAPSHOT" level="project" />
@@ -262,7 +273,6 @@
     <orderEntry type="library" name="Maven: com.taobao.eagleeye:eagleeye-core:1.5.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.xerial.snappy:snappy-java:1.0.4.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-compress:1.9" level="project" />
-    <orderEntry type="library" name="Maven: com.taobao.vipserver:vipserver-client:4.6.2" level="project" />
     <orderEntry type="library" name="Maven: com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2" level="project" />
     <orderEntry type="library" name="Maven: com.taobao.hsf.hessian:hessian:4.0.7.bugfix10" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.2" level="project" />

@@ -1,4 +1,4 @@
-package com.lf.algorithm.ratio;
+package com.lf.zk.ratio;
 
 import java.math.BigDecimal;
 import java.util.*;

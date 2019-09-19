@@ -1,4 +1,4 @@
-package com.lf.algorithm.cartesian;
+package com.lf.zk.cartesian;
 
 public class CateTagPopDO {
     private String cateLevel1Id;

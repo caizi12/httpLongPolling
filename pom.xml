@@ -11,6 +11,8 @@
     <module>http-polling</module>
     <module>algorithm</module>
     <module>java-web</module>
+    <module>netty</module>
+    <module>zk</module>
   </modules>
 
   <dependencies>

@@ -1,4 +1,4 @@
-package com.lf.algorithm.cartesian;
+package com.lf.zk.cartesian;
 
 
 import java.util.*;
