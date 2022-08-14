@@ -4,11 +4,11 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 
 /**
- * Ò»ÖÂÐÔ Hash Ëã·¨
+ * ä¸€è‡´æ€§ Hash ç®—æ³•
  */
 public class ConsistenHash {
 
-    private static String[] serverIps= new String[]{"127.0.1","127.0","127.9.3.1","127"};
+    private static String[] serverIps= new String[]{"127.0.1","127.0.3.5","127.9.3.1","127.22.3.10"};
 
     private  static SortedMap<Integer,String> sortedMap = new TreeMap();
 
@@ -16,15 +16,15 @@ public class ConsistenHash {
     static {
         for (String serverIp:serverIps){
             int hash = getHashForLength(serverIp);
-            System.out.println(serverIp+" hash ÖµÎª:"+hash);
+            System.out.println(serverIp+" hash å€¼ä¸º:"+hash);
             sortedMap.put(hash,serverIp);
         }
     }
 
     public static void main(String[] args) {
-        String[] keys = new String[]{"1","Ì«Ñô12","ÔÂÁÁ4545","124343433","21222211231231"};
+        String[] keys = new String[]{"1","å¤ªé˜³12","æœˆäº®4545","124343433","21222211231231"};
         for (String key:keys){
-            System.out.println("key:"+key+" ËùÔÚµÄ IP Îª£º"+getServer(key));
+            System.out.println("key:"+key+" æ‰€åœ¨çš„ IP ä¸ºï¼š"+getServer(key));
         }
     }
 
@@ -56,7 +56,7 @@ public class ConsistenHash {
         hash ^= hash >> 17;
         hash += hash << 5;
 
-        // Èç¹ûËã³öÀ´µÄÖµÎª¸ºÊýÔòÈ¡Æä¾ø¶ÔÖµ
+        // å¦‚æžœç®—å‡ºæ¥çš„å€¼ä¸ºè´Ÿæ•°åˆ™å–å…¶ç»å¯¹å€¼
         if (hash < 0)
             hash = Math.abs(hash);
         return hash;

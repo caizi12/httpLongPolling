@@ -7,16 +7,13 @@
   <version>1.0-SNAPSHOT</version>
 
   <modules>
-<<<<<<< HEAD
-    <module>annotation-test</module>
-    <module>http-polling</module>
-    <module>algorithm</module>
-    <module>java-web</module>
+<!--    <module>annotation-test</module>-->
+<!--    <module>http-polling</module>-->
+<!--    <module>algorithm</module>-->
+<!--    <module>java-web</module>-->
     <module>netty</module>
     <module>zk</module>
-=======
     <module>shopping-web</module>
->>>>>>> 9ff839e03b21383a090f2cc38afa0035c1d8b132
   </modules>
 
   <dependencies>
@@ -30,6 +27,12 @@
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>3.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>RELEASE</version>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 
