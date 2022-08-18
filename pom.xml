@@ -8,9 +8,9 @@
 
   <modules>
 <!--    <module>annotation-test</module>-->
-<!--    <module>http-polling</module>-->
-<!--    <module>algorithm</module>-->
-<!--    <module>java-web</module>-->
+    <module>http-polling</module>
+    <module>algorithm</module>
+    <module>dubbo-test</module>
     <module>netty</module>
     <module>zk</module>
     <module>shopping-web</module>
