@@ -23,7 +23,6 @@ public class MapTest {
         if (this == obj) {
             return true;
         }
-
         if (obj == null) {
             return false;
         }

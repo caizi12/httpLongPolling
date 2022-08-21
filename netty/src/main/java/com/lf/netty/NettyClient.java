@@ -11,7 +11,7 @@ import io.netty.handler.codec.string.StringEncoder;
 
 /**
  * @author lfeng
- * @date 2019/3/1 обнГ5:02
+ * @date 2019/3/1 ????5:02
  */
 public class NettyClient {
     public static void main(String[] args) throws InterruptedException {

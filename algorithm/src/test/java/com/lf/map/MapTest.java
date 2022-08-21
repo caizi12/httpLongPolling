@@ -29,6 +29,7 @@ public class MapTest {
     }
 
     public static void main(String[] args) {
+        System.out.println(new Integer(1) == new Integer(2));
         Map map = new HashMap<>();
         int i = 0;
         while (i++ < 10){

@@ -13,10 +13,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import com.google.gson.Gson;
 
 /**
- * ±êÇ©ÈÈ¶ÈÅÅÐÐ¼ÆËã
+ * ï¿½ï¿½Ç©ï¿½È¶ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½
  */
 public class CalculateHeatRank {
 
@@ -40,19 +39,19 @@ public class CalculateHeatRank {
             cateProductMap.put(cateTagPopDO.getCateLevel3Id(), cateTagTypeValList);
         }
 
-        System.out.println(new Gson().toJson(cateProductMap));
+        //System.out.println(new Gson().toJson(cateProductMap));
 
         calculateHeatRank.calcuateCartesian(cateProductMap);
     }
 
     /**
-     * ¼ÆËãµÑ¿¨¶û¼¯
+     * ï¿½ï¿½ï¿½ï¿½Ñ¿ï¿½ï¿½ï¿½ï¿½ï¿½
      *
      * @param cateProductMap
      */
     private void calcuateCartesian(Map<String, CateTagTypeValList> cateProductMap) {
         List<HeatRankDO> resultList=new ArrayList<HeatRankDO>();
-        //²úÆ·´Ê±êÇ©ÀàÐÍÑ­»·
+        //ï¿½ï¿½Æ·ï¿½Ê±ï¿½Ç©ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½
         for (CateTagTypeValList cateTagTypeValList : cateProductMap.values()) {
             resultList.addAll(generateCartesian(cateTagTypeValList));
         }
@@ -78,7 +77,7 @@ public class CalculateHeatRank {
     }
 
     /**
-     * µ¥¸ö²úÆ·´ÊÉú³ÉµÑ¿¨¶û¼¯
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ÉµÑ¿ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     private List<HeatRankDO> generateCartesian(CateTagTypeValList cateTagTypeValList) {
         Iterator<List<CateTagPopDO>> tagTypeValIterator = cateTagTypeValList.getTagTypeValListMap().values().iterator();
