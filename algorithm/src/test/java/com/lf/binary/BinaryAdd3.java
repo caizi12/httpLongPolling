@@ -30,6 +30,7 @@ public class BinaryAdd3 {
     public static void main(String[] args) {
         String aa = "100";
         String bb = "1011";
+        BinaryAdd3 add3 = new BinaryAdd3();
         System.out.println(addBinary(aa, bb));
     }
 }

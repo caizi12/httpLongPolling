@@ -34,6 +34,8 @@ public class Multi {
     public static void main(String[] args) {
         Multi m = new Multi();
         int a[] = {1, 2, 3};
+        long aa= (long)1000 * 1000 * 1000;
+        System.out.println(aa);
         System.out.println(m.maximumProduct(a));
     }
 }
